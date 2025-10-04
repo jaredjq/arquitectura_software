@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Usuario</title>
+    <link rel="stylesheet" href="styles/clau_style1.css">
+    <script src="js/verificarSesion.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Crear Usuario</h2>
+        <form id="crearUsuarioForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="rol">Rol:</label>
+            <select id="estado" name="estado" required>
+                <option value="">Seleccione un rol</option>
+                <option value="1">Administrador</option>
+                <option value="2">Encargado Primer Corte</option>
+                <option value="3">Encargado Impresion</option>
+                <option value="4">Encargado Doblado</option>
+                <option value="5">Encargado Compaginado</option>
+                <option value="6">Encargado Engrapado</option>
+                <option value="7">Encargado Corte Final</option>
+            </select>
+
+            <div class="botonera">
+                <button type="submit" class="btn-aceptar">ACEPTAR</button>
+                <button type="button" id="btn_salir" class="btn-volver">VOLVER</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/crear_usuario.js"></script>
+</body>
+</html>

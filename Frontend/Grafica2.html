@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gráfico de Barras con Exportación</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/grafica_style.css">
+    <script src="js/verificarSesion.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+</head>
+
+<body>
+    <!-- Selector para comparar otro proyecto -->
+    <div class="selector-container">
+        <label for="proyectoComparar">Comparar con otro proyecto:</label>
+        <select id="proyectoComparar">
+            <option value="">Seleccione un proyecto</option>
+        </select>
+    </div>
+
+    <!-- Contenedor de las gráficas lado a lado -->
+    <div class="charts-wrapper">
+        <div class="canvas-wrapper">
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+        <div class="canvas-wrapper" id="comparisonWrapper" style="display: none;">
+            <canvas id="comparisonChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <button id="exportButton">EXPORTAR GRAFICA</button>
+    <button id="btn_salir" class="btn-salir-panel">VOLVER</button>
+
+    <script>
+        let myChart;
+        let comparisonChart;
+
+        document.addEventListener('DOMContentLoaded', async function () {
+            const data = JSON.parse(localStorage.getItem('graficaData'));
+
+            if (data) {
+                const ctx = document.getElementById("myChart").getContext("2d");
+                myChart = new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: data.labels,
+                        datasets: [{
+                            label: `Costes de merma de OT`,
+                            data: data.data,
+                            backgroundColor: [
+                                'rgb(66, 134, 244,0.7)',
+                                'rgb(74, 135, 72,0.7)',
+                                'rgb(229, 89, 50,0.7)',
+                                'rgb(60, 139, 232,0.7)',
+                                'rgb(255, 161, 82,0.7)',
+                                'rgb(183, 63, 255,0.7)'
+                            ]
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{ ticks: { beginAtZero: true } }]
+                        }
+                    }
+                });
+            }
+
+            await obtenerProyectos();
+
+            document.getElementById("proyectoComparar").addEventListener("change", function () {
+                const nombre = this.value;
+                if (nombre) cargarGraficaComparacion(nombre);
+            });
+
+            document.getElementById("exportButton").addEventListener("click", function () {
+                const canvas = document.getElementById("myChart");
+                const imageUrl = canvas.toDataURL("image/png");
+                const link = document.createElement("a");
+                link.href = imageUrl;
+                link.download = "grafica.png";
+                link.click();
+            });
+            document.getElementById("btn_salir").addEventListener("click", () => {
+                window.location.href = "IngresoDatos.html";
+            });
+        });
+
+        async function obtenerProyectos() {
+            const response = await fetch('/auth/listar-proyectos');
+            const proyectos = await response.json();
+            const selector = document.getElementById("proyectoComparar");
+
+            proyectos.forEach(p => {
+                const option = document.createElement("option");
+                option.value = p.nombre_trabajo;
+                option.text = p.nombre_trabajo;
+                selector.appendChild(option);
+            });
+        }
+
+        async function cargarGraficaComparacion(nombreTrabajo) {
+            const response = await fetch('/auth/generar-grafica2', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nombre_trabajo: nombreTrabajo })
+            });
+
+            const data = await response.json();
+
+            if (!data || !data.data) {
+                alert("No se encontraron datos para el proyecto seleccionado.");
+                return;
+            }
+
+            if (comparisonChart) {
+                comparisonChart.destroy();
+            }
+
+            document.getElementById("comparisonWrapper").style.display = "block"; // Mostrar el div
+            const ctx2 = document.getElementById("comparisonChart").getContext("2d"); // Obtener el canvas correctamente
+            comparisonChart = new Chart(ctx2, {
+                type: "bar",
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: `Comparación - ${nombreTrabajo}`,
+                        data: data.data,
+                        backgroundColor: [
+                            'rgb(66, 134, 244,0.7)',
+                            'rgb(74, 135, 72,0.7)',
+                            'rgb(229, 89, 50,0.7)',
+                            'rgb(60, 139, 232,0.7)',
+                            'rgb(255, 161, 82,0.7)',
+                            'rgb(183, 63, 255,0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{ ticks: { beginAtZero: true } }]
+                    }
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ingreso de datos</title>
+  <link rel="stylesheet" href="styles/rod_style1.css" />
+  <script src="js/verificarSesion.js"></script>
+</head>
+
+<body>
+
+  <div class="contenedor_general">
+    <h1>INGRESO DE DATOS DE PRODUCCIÓN</h1>
+    <div class="contenedor-flex-form-bandeja">
+    <form id="form_produccion">
+
+      <div class="contenedor-imgs">
+        <button id="btn-solicitar" type="submit"><img src="img/solicitarCAMBIO.png" alt="boton para solicitar un cambio" id="img-cambio"></button>
+        <button id="btn-guardar2" type="submit"><img src="img/SAVE.png" alt="boton para guardar" id="img-guardar"></button>
+        <button id="btn-editar2" type="button"><img src="img/EDIT.png" alt="boton para editar" id="img-editar"></button>
+      </div>
+      <div>
+        <h3>NOMBRE DE TRABAJO:</h3>
+        <input type="text" name="nombre_trabajo" id="nombre_trabajo" placeholder="Ingrese el nombre" readonly>
+      </div>
+
+      <div>
+        <h3>MATERIAL SALIENTE 1 CORTE:</h3>
+        <input type="number" name="salida_corte1"  id="primer_corte" placeholder="Ingrese la cantidad">
+      </div>
+
+      <div>
+        <h3>CANTIDAD DE HOJAS INGRESADAS:</h3>
+        <input type="number" name="cantidad_hojas_ingresadas"  id="cantidad_hojas_ingresadas" placeholder="Ingrese la cantidad" required>
+      </div>
+
+      <div>
+        <h3>MATERIAL SALIENTE IMPRESIÓN:</h3>
+        <input type="number" name="salida_impresion" id="impresion" placeholder="Ingrese la cantidad">
+      </div>
+
+      <div>
+        <h3>PRECIO MATERIAL:</h3>
+        <input type="text" name="precio_hoja" id="precio_hoja" placeholder="Ingrese el precio" required>
+      </div>
+
+      <div>
+        <h3>MATERIAL SALIENTE DOBLADO:</h3>
+        <input type="number" name="salida_doblado" id="doblado" placeholder="Ingrese la cantidad">
+      </div>
+
+      <div>
+        <h3>FECHA INICIAL:</h3>
+        <input type="date" name="fecha_inicial"  id="fecha_inicial" readonly>
+      </div>
+
+      <div>
+        <h3>MATERIAL SALIENTE COMPAGINADO:</h3>
+        <input type="number" name="salida_compaginado"  id="compaginado" placeholder="Ingrese la cantidad">
+      </div>
+
+      <div>
+        <h3>FECHA FINAL:</h3>
+        <input type="date" name="fecha_final" id="fecha_final">
+      </div>
+
+      <div>
+        <h3>MATERIAL SALIENTE ENGRAMPADO:</h3>
+        <input type="number" name="salida_engrapado" id="engrampado" placeholder="Ingrese la cantidad">
+      </div>
+
+      <div>
+      </div> <!-- vacío para cuadrar -->
+      <div>
+        <h3>MATERIAL SALIENTE 2 CORTE:</h3>
+        <input type="number" name="salida_corte2" id="segundo_corte" placeholder="Ingrese la cantidad">
+      </div>
+
+      <div class="opciones">
+        <button class="botones" type="button" id="btn_guardar" style="display: none;">Guardar en BD</button>
+        <button class="botones" type="button" id="btn_pdf">GENERAR PDF</button>
+        <button class="botones" type="button" id="btn_grafica">GRÁFICAS DE MERMA</button>
+        <button class="botones" type="button" id="btn_grafica2">GRÁFICAS DE COSTES</button>
+        <button id="btn_salir" type="button">VOLVER</button>
+      </div>
+    </form>
+
+    <!-- Bandeja de alertas: agrégala aquí -->
+    <div id="bandejaAlertas" class="bandeja-alertas"></div>
+    </div>
+  </div>
+
+  <script src="js/mostrarOT.js"defer></script>
+  <script src="js/guardarOT.js" defer></script>
+  <script src="js/app.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "name": "software_logistica",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnLiu69/software_logistica.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnLiu69/software_logistica/issues"
+  },
+  "homepage": "https://github.com/AnLiu69/software_logistica#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "jsonwebtoken": "^9.0.2",
+    "jspdf": "^3.0.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.14.0",
+    "nodemailer": "^6.10.1",
+    "pdfkit": "^0.17.1"
+  },
+  "description": ""
+}

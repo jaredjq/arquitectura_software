@@ -1,0 +1,322 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    /* Fondo con imagen */
+    background-image: url(../img/fondi.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* Distribución en columnas */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+}
+
+/* ======== BARRA DE NAVEGACIÓN SUPERIOR ======== */
+.barra-navegacion {
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Campo de texto que simula la URL del navegador */
+.barra-navegacion input {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Íconos de navegación simulados */
+.barra-navegacion span {
+    font-weight: bold;
+}
+
+/* ======== CONTENEDOR PRINCIPAL CENTRADO ======== */
+.container {
+    flex: 1; /* toma el resto del espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* espacio entre elementos internos */
+}
+
+/* Mensaje de bienvenida */
+.mensaje {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 3px black; /* mejora visibilidad sobre el fondo */
+}
+
+/* ======== BOTONES ======== */
+.botones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo base de los botones */
+.botones button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Cambio de color al pasar el cursor */
+.botones button:hover {
+    background-color: rgb(41, 85, 187); /* azul más oscuro */
+}
+
+body {
+    background-image: url("../img/fondi.png");
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    padding: 10px;
+    width: 480px;
+    justify-items: center;
+    background-color: rgba(255, 255, 255, 0.2); /* translúcido */
+    backdrop-filter: blur(10px); /* efecto vidrio */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: rgb(51, 106, 234);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 0px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .btn-salir-panel {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.btn-salir-panel:hover {
+  background-color: #d32f2f;
+}
+.contenedor-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 90vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.tabla-usuarios {
+  background-color: rgba(255, 255, 255, 0.90);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  max-height: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 650px; /* Tamaño mínimo para que no se deforme en escritorio */
+  max-width: 920px; /* ANCHO MÁXIMO reducido para que no ocupe todo el viewport */
+  width: 70vw;  /* Opcional: la tabla toma el 60% del ancho de la ventana (ajusta si deseas) */
+}
+
+/* Ajuste para la tabla interna */
+.tabla-usuarios table {
+  width: 100%;
+  min-width: 650px; /* Así las columnas no se comprimen mucho */
+  max-width: 920px; /* Para no expandirse en pantallas grandes */
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.tabla-usuarios thead {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.95); /* para que los th no se pierdan en el scroll */
+  z-index: 2;
+}
+
+.tabla-usuarios tbody {
+  display: block;
+  max-height: 400px;   /* Aquí puedes ajustar la altura visible de las filas */
+  overflow-y: auto;
+}
+
+.tabla-usuarios tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.tabla-usuarios th, .tabla-usuarios td {
+  padding: 8px 6px;
+  text-align: left;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  overflow-wrap: anywhere;
+}
+
+.tabla-usuarios th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.panel-cambio-rol {
+  background-color: rgba(255, 255, 255, 0.93);
+  padding: 28px 20px 20px 20px;
+  border-radius: 12px;
+  width: 270px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px; /* esto te baja el panel respecto a la tabla, ajusta si quieres más */
+}
+
+.panel-buttons {
+  margin-top: 16px;
+  margin-bottom: 10px; /* Espacio entre botones y el de salir */
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.panel-buttons button {
+  margin: 0;
+  flex: 1;
+}
+
+.btn-salir-panel {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.btn-salir-panel:hover {
+  background-color: #d32f2f;
+}
+
+@media (max-width: 900px) {
+  .contenedor-principal {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+  .tabla-usuarios, .panel-cambio-rol {
+    width: 95%;
+    margin: 0 auto;
+    min-width: unset;
+    max-width: 100%;
+  }
+  .panel-cambio-rol {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tabla-usuarios table, 
+  .tabla-usuarios thead, 
+  .tabla-usuarios tbody, 
+  .tabla-usuarios th, 
+  .tabla-usuarios td, 
+  .tabla-usuarios tr {
+    display: block;
+    width: 100%;
+  }
+  .tabla-usuarios thead {
+    display: none; /* Oculta los encabezados en móvil */
+  }
+  .tabla-usuarios tr {
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.98);
+  }
+  .tabla-usuarios td {
+    padding-left: 50%;
+    position: relative;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    min-height: 28px;
+    box-sizing: border-box;
+  }
+  .tabla-usuarios td:before {
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    white-space: pre-wrap;
+    font-weight: bold;
+    color: #666;
+    content: attr(data-label);
+    font-size: 13px;
+    top: 10px;
+  }
+}

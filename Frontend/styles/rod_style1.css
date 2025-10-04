@@ -1,0 +1,222 @@
+@page {
+    size: A4 landscape;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/fondi.png) no-repeat center center/cover;
+}
+
+.contenedor_general {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    width: 90%;
+}
+
+.contenedor-flex-form-bandeja {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+/* --- SOLUCIÓN AL ESPACIO: cuando solo hay el form, ocupa todo el ancho --- */
+.contenedor-flex-form-bandeja > form:only-child {
+    width: 100%;
+    max-width: 100%;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+    align-items: center;
+}
+
+form h3 {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.opciones {
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.botones {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.botones:hover {
+    background-color: #0056b3;
+}
+
+.contenedor-imgs{
+    grid-column: 1 / span 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: end;
+}
+
+.contenedor-imgs img {
+    width: 35px;
+    height: 35px;
+}
+
+.contenedor-imgs button {
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+#btn-guardar2{
+    background-color: #00C853;
+}
+#btn-editar2{
+    background-color: #FEB602;
+}
+#btn-solicitar{
+    background-color: #1868DB;
+}
+
+#btn-guardar2:hover{
+    background-color: #189A2E;
+}
+#btn-editar2:hover{
+    background-color: #F4980A;
+}
+#btn-solicitar:hover{
+    background-color: #1558BC;
+}
+
+.desactivado{
+    pointer-events: none;
+}
+
+button {
+    background-color: rgb(234, 51, 51);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.bandeja-alertas {
+    min-width: 260px;
+    max-width: 320px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(51,106,234,0.13);
+    padding: 18px 10px 14px 10px;
+    max-height: 380px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alerta-merma {
+    background: #ffefef;
+    border-left: 5px solid #e53935;
+    border-radius: 8px;
+    padding: 12px 10px 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 15px;
+    box-shadow: 0 2px 5px 0 rgba(229,57,53,0.07);
+}
+
+.btn-cerrar-alerta {
+    background: #e53935;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.16s;
+}
+
+.btn-cerrar-alerta:hover {
+    background: #b71c1c;
+}
+
+.btn-vaciar-bandeja {
+    margin-top: 5px;
+    background: rgb(51, 106, 234);
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 8px 0;
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-vaciar-bandeja:hover {
+    background: rgb(41, 85, 187);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contenedor-flex-form-bandeja {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .bandeja-alertas {
+        max-width: 100%;
+        min-width: 0;
+    }
+    /* El form en responsive ya ocupa 100% automáticamente */
+}

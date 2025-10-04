@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Editar Usuario</title>
+  <link rel="stylesheet" href="styles/clau_style.css" />
+  <script src="js/verificarSesion.js"></script>
+</head>
+<body>
+  <div class="contenedor-principal">
+    <!-- Tabla de usuarios -->
+    <div class="tabla-usuarios">
+      <h2>Editar Datos de Usuarios</h2>
+      <table id="tablaUsuarios">
+        <thead>
+          <tr>
+            <th>Correo</th>
+            <th>Rol Actual</th>
+            <th>Contraseña</th>
+            <th>Modificar</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Panel lateral de edición -->
+    <div class="panel-cambio-rol" id="panelRol">
+      <h3>Modificar Usuario</h3>
+      <p id="rolActual">Correo actual: </p>
+      <div id="formularioMod"></div>
+      <div class="panel-buttons">
+        <button id="btnAsignar">ACEPTAR</button>
+        <button id="btnCancelar">CANCELAR</button>
+      </div>
+      <button id="btnSalir" class="btn-salir-panel">VOLVER</button>
+    </div>
+  </div>
+  <script src="js/asignar_estado.js"></script>
+</body>
+</html>

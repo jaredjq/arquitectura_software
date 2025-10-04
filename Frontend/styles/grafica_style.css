@@ -1,0 +1,87 @@
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(../img/fondi.png) no-repeat center center /cover;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.charts-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+}
+
+.canvas-wrapper {
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+canvas {
+  width: 100% !important;
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: rgb(51, 106, 234);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin-top: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: auto;
+}
+
+button:hover {
+  background-color: rgb(39, 82, 173);
+}
+
+button:focus {
+  outline: none;
+}
+
+button#btn_salir.btn-salir-panel {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin-top: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  width: auto !important;
+  max-width: fit-content;
+}
+
+button#btn_salir.btn-salir-panel:hover {
+  background-color: #d32f2f;
+}

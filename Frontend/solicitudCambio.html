@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitar cambio</title>
+    <link rel="stylesheet" href="styles/rod_style1.css" />
+    <script src="js/verificarSesion.js"></script>
+</head>
+
+<body>
+
+    <div class="contenedor_general">
+        <h1>SOLICITUD DE CAMBIO</h1>
+
+        <form id="form_solicitud">
+            <div>
+                <h3>NOMBRE DE TRABAJO:</h3>
+                <input type="text" name="nombre_trabajo" id="nombre_trabajo" readonly>
+            </div>
+
+            <div>
+                <h3>PROCESO:</h3>
+                <input type="text" name="proceso" id="proceso" readonly>
+            </div>
+
+            <div>
+                <h3>CANTIDAD REAL:</h3>
+                <input type="number" name="cantidad_salida_real" id="cantidad_salida_real"
+                    placeholder="Ingrese la cantidad" required>
+            </div>
+
+            <div>
+                <h3>MOTIVO DE SOLICITUD:</h3>
+                <input type="text" name="motivo_solicitud" id="motivo_solicitud" placeholder="Ingrese el motivo" required>
+            </div>
+
+            <div class="opciones">
+                <button class="botones" type="button" id="btn_guardar" style="display: none;">Guardar en BD</button>
+                <button class="botones" type="submit" id="btn_solicitud">ENVIAR SOLICITUD</button>
+                <button id="btn_salir" type="button">VOLVER</button>
+            </div>
+            <p id="mensaje" class="mensaje"></p>
+        </form>
+
+    </div>
+    <script src="js/mostrarSolicitud.js" defer></script>
+    <script src="js/enviarSolicitud.js" defer></script>
+</body>
+
+</html>

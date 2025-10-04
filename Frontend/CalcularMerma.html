@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Calculadora de Merma</title>
+    <link rel="stylesheet" href="styles/abra_style2.css">
+</head>
+<body>
+    <div class="contenedor_general">
+        <h1>CALCULADORA DE MERMA</h1>
+
+        <!-- 🔍 FORMULARIO DE BUSQUEDA -->
+        <form id="formu">
+            <div class="form-container">
+                <label for="nombreOT"><b>BUSCAR OT :</b></label>
+                <input type="text" id="nombreOT" />
+                <button type="submit" class="buscar">BUSCAR</button>
+                <button type="button" class="limpiar" id="btn_limpiar">LIMPIAR</button>
+                <button type="button" class="volver" id="btn_salir">VOLVER</button>
+            </div>
+        </form>
+
+        <table class="tabla-merma">
+            <thead>
+                <tr>
+                    <th>Proceso</th>
+                    <th>Merma Proceso</th>
+                    <th>Valor Unidad</th>
+                    <th>Valor Total</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCuerpo"></tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td colspan="3">TOTAL</td>
+                    <td><span id="totalGeneral">S/. 0.00</span></td>
+                    <td><button onclick="calcularTotal()">Calculo Total</button></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script src="js/CalcularMerma.js"></script>
+</body>
+</html>

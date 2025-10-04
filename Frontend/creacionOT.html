@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/abra_style.css">
+    <title>Formulario para datos</title>
+    <script src="js/verificarSesion.js"></script>
+</head>
+<body>
+    <form id="formu">
+        <div class="form-container">
+            <div class="input-group">
+              <label for="nombreOT">Ingrese el nombre de la OT que se creará:</label>
+              <input type="text" id="nombreOT"  name="nombreOT" placeholder="Nombre de la OT" required>
+            </div>
+            <div class="input-group">
+              <label for="cantidadHojasOT">Ingrese la cantidad de hojas para el proyecto:</label>
+              <input type="text" id="cantidadHojasOT"  name="cantidadHojasOT" placeholder="Hojas para la OT" required>
+            </div>
+            <div class="input-group">
+              <label for="precioHoja">Ingrese el precio por hoja:</label>
+              <input type="text" id="precioHoja"  name="precioHoja" placeholder="Precio por hoja" required>
+            </div>
+            <div class="input-group">
+              <label for="fechaInicioOT">Ingrese la fecha de inicio del proyecto:</label>
+              <input type="date" id="fechaInicioOT"  name="fechaInicioOT" placeholder="Fecha de inicio" required>
+            </div>
+            <div class="buttons" id="crear">
+                <button type="submit">Crear</button>
+            </div>
+            <p id="mensaje" class="mensaje"></p>
+        </div>
+    </form>
+    <script src="js/crearOT.js"></script>
+</body>
+</html>

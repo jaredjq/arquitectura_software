@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Formulario OT</title>
+  <link rel="stylesheet" href="styles/abra_style.css"/>
+  <script src="js/verificarSesion.js"></script>
+</head>
+<body>
+  <form id="formu">
+    <div class="form-container">
+      <div class="input-group">
+        <label for="nombreOT">INGRESE EL NOMBRE DE LA OT</label>
+        <input type="text" id="nombreOT" />
+      </div>
+      <div class="buttons">
+        <button type="submit" id="btn_buscar">BUSCAR</button>
+        <button type="button" id="btn_limpiar">LIMPIAR</button>
+        <button id="btn_salir" class="btn-salir-panel">VOLVER</button>
+      </div>
+      <p id="mensaje" class="mensaje"></p>
+    </div>
+  </form>
+  <script src="js/buscarOT.js"></script>
+</body>
+</html>
